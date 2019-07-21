@@ -1,0 +1,75 @@
+<!--
+	https://github.com/fedor/quick-and-dirty
+	Copyright (c) 2019 Fedor Korshunov
+	MIT License
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Documentation of FooBar API v0.0.0 (alpha)</title>
+	<link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+	<style>
+		header { width:300px;position:fixed;top:0;bottom:0;overflow-x:hidden;overflow-y:scroll; }
+		body { position: relative; }
+		main { margin-left: 300px; }
+		header p { padding-left: 20px; }
+		header ol { padding-left: 20px; counter-reset: list-item; }
+		header li { display: block; counter-increment: list-item; }
+		header li:before { content: counters(list-item,'.') ' '; }
+	</style>
+</head>
+<body>
+<header>
+<p><strong>FooBar API v0.0.0 (alpha)</strong></p>
+<nav class="table-of-contents"><ol><li><a href="#tutorial">Tutorial</a><ol><li><a href="#calling-foobar-api">Calling FooBar API</a></li></ol></li><li><a href="#examples">Examples</a><ol><li><a href="#greeting-the-world">Greeting the world</a></li></ol></li><li><a href="#api-reference">API Reference</a><ol><li><a href="#hello.world()">Hello.world()</a></li><li><a href="#foo.bar()">Foo.bar()</a></li></ol></li></ol></nav><p><small>Generated: Mon Jul 22 2019 01:29:30 GMT+0800 (Hong Kong Standard Time)</small></p>
+</header>
+<main>
+<h1 id="tutorial">Tutorial</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu a sollicitudin dignissim. Vestibulum non dolor vitae leo mattis pulvinar ut a lorem. Aenean at posuere felis. Aliquam erat velit, fermentum nec cursus a, rutrum ut tortor. Integer efficitur, ex vitae fermentum finibus, arcu dui tincidunt nulla, et lacinia ipsum nisi laoreet augue. Sed bibendum felis eget enim aliquet, sit amet gravida lorem faucibus. Cras nec sem diam.</p>
+<h2 id="calling-foobar-api">Calling FooBar API</h2>
+<p>Curabitur et pretium leo. Nam aliquet urna eros, sed molestie nulla pharetra at. Donec faucibus dui in enim mattis efficitur. Suspendisse at dictum magna. Phasellus tellus turpis, volutpat quis ipsum faucibus, commodo condimentum mi. Fusce mollis ipsum ut tristique blandit. Aenean et velit et orci pretium sodales at at sem. Vivamus eu luctus arcu. Proin placerat fermentum est, id vehicula ligula tincidunt ut. Fusce porta risus nec magna vehicula, sed imperdiet quam ornare. Curabitur orci leo, lobortis eget luctus vel, sagittis at est. Curabitur ullamcorper rhoncus nisi, at lobortis sapien ornare et.</p>
+<ul>
+<li>Libero occaecati non perspiciatis numquam</li>
+<li>Impedit illum neque ut explicabo sed maxime sint sint</li>
+<li>Magnam vel earum ut totam</li>
+<li>Debitis modi voluptatem in</li>
+<li>Ut quis reprehenderit doloribus sed deserunt</li>
+<li>Dignissimos porro totam exercitationem tenetur unde autem est</li>
+</ul>
+<pre><code>const hello = require('./hello')
+hello()
+console.log(&quot;Hello World&quot;)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>Voluptatem cum nesciunt fuga possimus earum</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>Mollitia cupiditate et autem id nostrum</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="examples">Examples</h1>
+<p>Nullam eu tempus mauris, id tincidunt enim. In pharetra sed felis quis feugiat. Morbi elementum turpis a dolor dictum sodales. Nulla ullamcorper, velit et pellentesque eleifend, dui ligula molestie dolor, id ultrices dui felis sit amet orci. Proin id cursus mi. Duis a ex sed ex semper mattis eu ut est. Nulla scelerisque cursus rutrum. Nam euismod, justo eu auctor rhoncus, lectus libero volutpat lacus, nec posuere sem ipsum nec nulla. Donec at lacus eu urna cursus venenatis. Sed lacinia sit amet elit at imperdiet. Nam nulla lacus, volutpat ac eleifend et, accumsan fringilla leo. Sed augue nisi, pretium venenatis nisl bibendum, commodo finibus velit. Nam eu purus mollis, vulputate diam sit amet, vestibulum arcu.</p>
+<h2 id="greeting-the-world">Greeting the world</h2>
+<p>Etiam vehicula ex vel hendrerit condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque dignissim est vel magna luctus tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer interdum, dolor a pulvinar faucibus, eros felis volutpat justo, at congue nunc nisi non augue. Nam sit amet volutpat erat, ut venenatis odio. Aliquam laoreet tincidunt semper. Nullam auctor purus vel nisi sollicitudin fermentum. Curabitur ac leo lacus. Duis non fringilla neque. Nam maximus eget erat a hendrerit. Nullam magna ex, ultrices vel sapien a, feugiat tempor magna.</p>
+<hr>
+<h1 id="api-reference">API Reference</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu a sollicitudin dignissim. Vestibulum non dolor vitae leo mattis pulvinar ut a lorem. Aenean at posuere felis. Aliquam erat velit, fermentum nec cursus a, rutrum ut tortor. Integer efficitur, ex vitae fermentum finibus, arcu dui tincidunt nulla, et lacinia ipsum nisi laoreet augue. Sed bibendum felis eget enim aliquet, sit amet gravida lorem faucibus. Cras nec sem diam.</p>
+<h2 id="hello.world()">Hello.world()</h2>
+<p>Quisque consequat magna ullamcorper consequat auctor. Pellentesque nec ipsum enim. Ut pharetra in leo et feugiat. Etiam rhoncus ut massa id porta. Morbi scelerisque non purus et porta. Suspendisse viverra sem eu blandit feugiat. Aliquam erat volutpat. Vivamus tempus, ipsum quis efficitur auctor, ipsum diam accumsan felis, et sollicitudin justo diam ac enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed feugiat ante at dolor tempor hendrerit. Sed id interdum ipsum.</p>
+<h2 id="foo.bar()">Foo.bar()</h2>
+<p>Curabitur et pretium leo. Nam aliquet urna eros, sed molestie nulla pharetra at. Donec faucibus dui in enim mattis efficitur. Suspendisse at dictum magna. Phasellus tellus turpis, volutpat quis ipsum faucibus, commodo condimentum mi. Fusce mollis ipsum ut tristique blandit. Aenean et velit et orci pretium sodales at at sem. Vivamus eu luctus arcu. Proin placerat fermentum est, id vehicula ligula tincidunt ut. Fusce porta risus nec magna vehicula, sed imperdiet quam ornare. Curabitur orci leo, lobortis eget luctus vel, sagittis at est. Curabitur ullamcorper rhoncus nisi, at lobortis sapien ornare et.</p>
+</main>
+</body>
+</html>

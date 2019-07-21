@@ -12,6 +12,8 @@ Quick-and-dirty original purpose is to quickly generate Markdown based single-pa
 # Example
 Check `index.md` template and two final versions: `index.html` and `private.html`. Certain parts of `private.html` are removed in "public" version.
 
+![](Screenshot%202019-07-22%20at%201.56.13%20AM.png)
+
 Each version is based on its own Mustache JSON payload:
 ```
 index.md + index.json   = index.html

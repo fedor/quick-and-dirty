@@ -26,7 +26,7 @@ const render = () => {
 			}
 		}
 
-		pagePreset.genAt = new Date().toISOString()
+		pagePreset.genAt = new Date().toString()
 		const input  = readFile(pagePreset.input)
 		const tmp = Mustache.render(input, pagePreset)
 		const output = md.render(tmp)

@@ -9,7 +9,6 @@
 	<title>{{apiName}} v{{apiVer}}</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/hybrid.min.css">
-	<link rel="stylesheet" href="style.css">
 	<style type="text/css">{{{fileStyleCSS}}}</style>
 	<script>{{{fileHighlightJS}}}</script>
 	<script>hljs.initHighlightingOnLoad();</script>
@@ -24,12 +23,20 @@
 
 [toc]
 
+{{#internal}}
 <small>{{genAt}}</small>
+{{/internal}}
 
 </header>
 <main>
 
 {{{fileContent}}}
+
+<small>
+
+Generated at {{genAt}} with [quick-and-dirty](https://github.com/fedor/quick-and-dirty)
+
+</small>
 
 </main>
 </body>

@@ -7,16 +7,54 @@
 <html>
 <head>
 	<title>Documentation of {{apiName}} v{{apiVer}}</title>
-	<link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/hybrid.min.css">
 	<style>
-		header { width:300px;position:fixed;top:0;bottom:0;overflow-x:hidden;overflow-y:scroll; }
-		body { position: relative; }
-		main { margin-left: 300px; }
+		body { position: relative; color:#445566; font-size: 14px; line-height: 22px; }
+		header {
+			border-right-style:solid; border-right-width:thin; border-right-color: lightgray;
+			width: 220px;
+			position: fixed;
+			top:0; bottom:0;
+			overflow-x:hidden; overflow-y:scroll;
+		}
 		header p { padding-left: 20px; }
-		header ol { padding-left: 20px; counter-reset: list-item; }
-		header li { display: block; counter-increment: list-item; }
-		header li:before { content: counters(list-item,'.') ' '; }
+		header ol { padding: 0px 0px 20px 20px; counter-reset: list-item; }
+		header li { display: block; }
+		main { margin-left: 290px; margin-right: 70px; }
+		main p,
+		main pre,
+		main ul,
+		main ol,
+		main table,
+		main hr,
+		main h1,
+		main h2,
+		main h3,
+		main h4,
+		main h5,
+		main h6 { margin-top: 20px; margin-bottom: 0px; }
+		main h1,
+		main h2,
+		main h3,
+		main h4,
+		main h5,
+		main h6 { padding-top: 20px }
+		main hr {
+			border-top-style: solid; border-bottom-style: none;
+			border-width: thin; border-color: lightgrey;
+			margin-left: -70px; margin-right: -70px; margin-top: 50px; margin-bottom: 50px;
+		}
+		.hljs { font-size: 13px; padding-top: 10px; padding-left: 14px; padding-bottom: 10px; padding-right: 14px; }
+		ol, ul { padding-left: 20px; }
+		table { border-collapse: collapse; }
+		table, th, td { border: 1px solid #ddd; }
+		th, td { padding: 10px; }
+		tbody tr:nth-child(odd) { background-color: #f2f2f2; }
+		a, a:visited, a:hover { color: #0077bb; text-decoration: none; text-decoration-style: solid; }
 	</style>
+	<script src="highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <header>
@@ -28,11 +66,12 @@
 
 [toc]
 
-<small>Generated: {{genAt}}</small>
 </header>
 <main>
 
 # Tutorial
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Nulla fringilla](http://example.com) arcu a sollicitudin dignissim. Vestibulum non dolor vitae leo mattis pulvinar ut a lorem. Aenean at posuere felis. Aliquam erat velit, fermentum nec cursus a, rutrum ut tortor. Integer efficitur, ex vitae fermentum finibus, arcu dui tincidunt nulla, et lacinia ipsum nisi laoreet augue. Sed bibendum felis eget enim aliquet, sit amet gravida lorem faucibus. Cras nec sem diam.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu a sollicitudin dignissim. Vestibulum non dolor vitae leo mattis pulvinar ut a lorem. Aenean at posuere felis. Aliquam erat velit, fermentum nec cursus a, rutrum ut tortor. Integer efficitur, ex vitae fermentum finibus, arcu dui tincidunt nulla, et lacinia ipsum nisi laoreet augue. Sed bibendum felis eget enim aliquet, sit amet gravida lorem faucibus. Cras nec sem diam.
 
@@ -55,14 +94,14 @@ Curabitur et pretium leo. Nam aliquet urna eros, sed molestie nulla pharetra at.
  - Ut quis reprehenderit doloribus sed deserunt
  - Dignissimos porro totam exercitationem tenetur unde autem est
 
-```
-const hello = require('./hello')
+```javascript
+const hello = require('hello')
 hello()
 console.log("Hello World")
 ```
 
 | Option | Description |
-| ------ | ----------- |
+|:------ |:----------- |
 | foo    | Voluptatem cum nesciunt fuga possimus earum |
 | bar    | Mollitia cupiditate et autem id nostrum |
 
@@ -89,6 +128,8 @@ Quisque consequat magna ullamcorper consequat auctor. Pellentesque nec ipsum eni
 ## Foo.bar()
 
 Curabitur et pretium leo. Nam aliquet urna eros, sed molestie nulla pharetra at. Donec faucibus dui in enim mattis efficitur. Suspendisse at dictum magna. Phasellus tellus turpis, volutpat quis ipsum faucibus, commodo condimentum mi. Fusce mollis ipsum ut tristique blandit. Aenean et velit et orci pretium sodales at at sem. Vivamus eu luctus arcu. Proin placerat fermentum est, id vehicula ligula tincidunt ut. Fusce porta risus nec magna vehicula, sed imperdiet quam ornare. Curabitur orci leo, lobortis eget luctus vel, sagittis at est. Curabitur ullamcorper rhoncus nisi, at lobortis sapien ornare et.
+
+<small>Generated: {{genAt}}</small>
 
 </main>
 </body>

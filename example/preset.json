@@ -1,0 +1,26 @@
+[
+	{
+		"input":  "assets/template.html",
+		"output": "public/index.html",
+
+		"fileContent":     "content.md",
+		"fileStyleCSS":    "assets/style.css",
+		"fileHighlightJS": "assets/highlight.pack.js",
+
+		"apiName":  "FooBar API",
+		"apiVer":   "0.0.0 (alpha)",
+		"internal": false
+	},
+	{
+		"input":  "assets/template.html",
+		"output": "public/internal.html",
+
+		"fileContent":     "content.md",
+		"fileStyleCSS":    "assets/style.css",
+		"fileHighlightJS": "assets/highlight.pack.js",
+
+		"apiName":  "FooBar API",
+		"apiVer":   "0.0.0",
+		"internal": true
+	}
+]

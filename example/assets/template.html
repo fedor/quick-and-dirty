@@ -1,0 +1,36 @@
+<!--
+	https://github.com/fedor/quick-and-dirty
+	Copyright (c) 2019 Fedor Korshunov
+	MIT License
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{apiName}} v{{apiVer}}</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/hybrid.min.css">
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">{{{fileStyleCSS}}}</style>
+	<script>{{{fileHighlightJS}}}</script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+
+**{{apiName}} v{{apiVer}}**  
+{{#internal}}
+**INTERNAL VER.**
+{{/internal}}
+
+[toc]
+
+<small>{{genAt}}</small>
+
+</header>
+<main>
+
+{{{fileContent}}}
+
+</main>
+</body>
+</html>

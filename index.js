@@ -6,31 +6,66 @@ const md = require('markdown-it')({ html: true, linkify: true })
 	.use(require('markdown-it-toc-done-right'))
 const Mustache = require('mustache')
 const fs = require('fs')
+const path = require('path')
 
-const isDevMode = process.argv[2] || 'false'
-const templateFile = process.argv[3] || './index.md'
-const payloadFile = process.argv[4] || './index.json'
-const outputFile = process.argv[5] || './index.html'
+const preset = require(process.argv[2])
+const presetPath = path.dirname(process.argv[2])
+const isDevMode = process.argv[3] !== undefined ? process.argv[3] : 'false'
 
+const readFile = (fileName) => fs.readFileSync(presetPath + '/' + fileName, { encoding: 'utf8' })
 const render = () => {
-	const input = fs.readFileSync(templateFile, { encoding: 'utf8' })
-	const payload = JSON.parse(fs.readFileSync(payloadFile, { encoding: 'utf8' }))
-	payload.genAt = new Date().toString()
-	let result = Mustache.render(input, payload)
-	result = md.render(result)
-	fs.writeFileSync(outputFile, result)
-	console.log(`[${payload.genAt}] ${outputFile} generated`)
+	for (let i = 0; i < preset.length; i++) {
+		const pagePreset = Object.assign({}, preset[i])
+		
+		// load "file*" content to preset
+		const pagePresetKeys = Object.keys(pagePreset)
+		for (let j = 0; j < pagePresetKeys.length; j++) {
+			const key = pagePresetKeys[j]
+			if (key.startsWith('file')) {
+				pagePreset[key] = Mustache.render(readFile(pagePreset[key]), pagePreset)
+			}
+		}
+
+		pagePreset.genAt = new Date().toISOString()
+		const input  = readFile(pagePreset.input)
+		const tmp = Mustache.render(input, pagePreset)
+		const output = md.render(tmp)
+		fs.writeFileSync(presetPath + '/' + pagePreset.output, output)
+		console.log(`[${pagePreset.genAt}] ${pagePreset.output} generated`)
+	}
 }
 
-const watch = (fileName) => 
-	fs.watchFile(fileName, { interval: 1000 }, (curr, prev) => {
+const watchList = []
+const watch = (fileName) => {
+	if (watchList.includes(fileName)) {
+		return
+	}
+
+	watchList.push(fileName)
+	fs.watchFile(presetPath + '/' + fileName, { interval: 1000 }, (curr, prev) => {
 		if (curr.mtime !== prev.mtime) {
 			render()
 		}
 	})
 
-render()
-if (isDevMode === 'true') {
-	watch(templateFile)
-	watch(payloadFile)
+	console.log(`Watch ${fileName}`)
 }
+
+if (isDevMode === 'true') {
+	for (let i = 0; i < preset.length; i++) {
+		const pagePreset = preset[i]
+
+		// load "file*"
+		const pagePresetKeys = Object.keys(pagePreset)
+		for (let j = 0; j < pagePresetKeys.length; j++) {
+			const key = pagePresetKeys[j]
+			if (key.startsWith('file')) {
+				watch(pagePreset[key])
+			}
+		}
+
+		watch(pagePreset.input)
+	}
+}
+
+render()

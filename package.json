@@ -4,8 +4,8 @@
   "description": "User docs generation, check \"scripts\"",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js false ./index.md ./private.json ./private.html && node index.js",
-    "dev": "concurrently --kill-others \"node index.js true\" \"node index.js true ./index.md ./private.json ./private.html\""
+    "start": "node index.js ./example/preset.json",
+    "dev": "node index.js ./example/preset.json true"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,5 @@
     "markdown-it-anchor": "^5.2.4",
     "markdown-it-toc-done-right": "^4.0.2",
     "mustache": "^3.0.1"
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.1"
   }
 }
